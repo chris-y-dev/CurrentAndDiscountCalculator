@@ -49,7 +49,7 @@ function DiscountCalculator({styles}) {
           />
         </View>
         <View style={styles.calculateButton}>
-          <Button title="Calculate" onPress={handleCalculate} color="#EC4CBC"/>
+          <Button title="Calculate" onPress={handleCalculate} color="#FF7ED4"/>
         </View>
           {displayResult && (
             <View style={styles.resultContainer}>

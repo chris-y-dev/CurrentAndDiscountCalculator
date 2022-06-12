@@ -131,7 +131,7 @@ function CurrencyConverter({styles}) {
                     style={styles.inputArea}
                     />
                     <View style={styles.calculateButton}>
-                        <Button title="Convert" onPress={handleConvert} color="#EC4CBC"/>
+                        <Button title="Convert" onPress={handleConvert} color="#FF7ED4"/>
                     </View>
             </View>
             <View style={styles.resultContainer}>

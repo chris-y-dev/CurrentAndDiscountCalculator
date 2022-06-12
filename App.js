@@ -88,6 +88,7 @@ const styles = StyleSheet.create({
 
   calculateButton: {
     marginTop: 24,
+    marginHorizontal: 30
   }
 
 

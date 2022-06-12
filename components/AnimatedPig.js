@@ -1,21 +1,39 @@
 import React, {useRef, useEffect} from 'react';
-import {View, Image, Animated} from 'react-native'
+import {View, Image, Animated, Pressable} from 'react-native'
 
-function AnimatedPig() {
-    const anim = useRef( Animated.value(0)).current //state, initial value
-  
-    static spring(2, 2)
+function AnimatedPig({homeStyles}) {
+
+    //useref = create once
+    const spring = useRef(new Animated.Value(0)).current;
+    
+    useEffect(()=>{
+        animatePig();
+    })
+
+    function animatePig(){
+        Animated.sequence([
+            Animated.spring(spring, {
+                bounciness: 50,
+                speed: 100,
+                toValue: -30,
+                duration: 400,
+                useNativeDriver: true,
+              }),
+            ]).start(({ finished }) =>
+                spring.setValue(0)
+            );
+    }
   
 
 
   
     return (
-
-
-
-    <Animated.View>
-        <Image source={require('../assets/piggyBank_icon.png')} style={homeStyles.image}/>
-    </Animated.View>
+        <Animated.View
+        style={{transform: [{translateY: spring}]}}>
+            <Pressable onPress={animatePig}>
+                <Image source={require('../assets/piggyBank_icon.png')} style={homeStyles.image}/>
+            </Pressable>
+        </Animated.View>
   )
 }
 

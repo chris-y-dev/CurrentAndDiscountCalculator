@@ -1,6 +1,7 @@
 import React from 'react'
 import {View, Text, Button, StyleSheet, Pressable, Image} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import AnimatedPig from './AnimatedPig';
 
 function Home({ styles }) {
 
@@ -37,7 +38,7 @@ function Home({ styles }) {
                 </View>
             </View>
             <View style={homeStyles.imageContainer}>
-                
+                <AnimatedPig homeStyles={homeStyles} />
             </View>    
         </View>
     </View>
@@ -51,7 +52,9 @@ const homeStyles = StyleSheet.create({
         fontSize: 24,
         textAlign: 'center',
         marginTop: 10,
-        marginBottom: 40
+        marginBottom: 40,
+        color: '#FF7ED4',
+        fontFamily: 'sans-serif',
     },
 
     buttons:{
@@ -60,7 +63,7 @@ const homeStyles = StyleSheet.create({
     },
 
     customButtonArea: {
-        backgroundColor: '#EC4CBC',
+        backgroundColor: '#FF7ED4',
         borderRadius: 6,
         width: 240,
         marginVertical: 24,
