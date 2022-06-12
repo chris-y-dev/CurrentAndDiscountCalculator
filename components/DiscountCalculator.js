@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
-import {View, Text, TextInput, Button} from 'react-native';
+import {View, Text, TextInput, Button, StyleSheet} from 'react-native';
 
-function discountCalculator() {
+function DiscountCalculator({styles}) {
     const [priceInput, setPriceInput] = useState(0);
     const [discountInput, setDiscountInput] = useState(0);
     const [displayResult, setDisplayResult] = useState(false);
-    const [result, setResult] = useState();
+    const [result, setResult] = useState('--');
 
     function handlePriceInput(priceInput){
         console.log(priceInput)
@@ -28,29 +28,44 @@ function discountCalculator() {
 
 
   return (
-    <View>
-        <View>
-          <Text>Original Price</Text>
+    <View style={styles.containerFull}>
+      <View style={styles.container}>
+        <View style={DiscountCalculatorStyles.inputRow}>
+          <Text style={styles.labelText}>Original Price</Text>
           <TextInput 
-            placeholder='Enter full price'
+            placeholder='e.g. 99.95'
             keyboardType='number-pad'
             onChangeText={handlePriceInput}
-            />
-          <Text>Discount %</Text>
-          <TextInput 
-          placeholder='Enter Discount %'
-          keyboardType='number-pad'
-          onChangeText={handleDiscountInput}
+            style={styles.inputArea}
           />
-          <Button title="Calculate" onPress={handleCalculate}/>
         </View>
-        <View>
-          <Text>Discounted Price</Text>
-          {displayResult && <Text>${result}</Text>}
+        <View style={DiscountCalculatorStyles.inputRow}>
+          <Text style={styles.labelText}>Discount %</Text>
+          <TextInput 
+            placeholder='e.g. 15'
+            keyboardType='number-pad'
+            onChangeText={handleDiscountInput}
+            style={styles.inputArea}
+          />
         </View>
+        <View style={styles.calculateButton}>
+          <Button title="Calculate" onPress={handleCalculate} color="#EC4CBC"/>
+        </View>
+          {displayResult && (
+            <View style={styles.resultContainer}>
+              <Text style={styles.resultLabel}>Discounted Price</Text>
+              <Text style={styles.resultText}>${result}</Text>
+            </View>
+          )}
       </View>
+    </View>
   )
 }
 
-export default discountCalculator;
+export default DiscountCalculator;
 
+const DiscountCalculatorStyles = StyleSheet.create({
+  inputRow: {
+    marginVertical: 6
+  }
+})
