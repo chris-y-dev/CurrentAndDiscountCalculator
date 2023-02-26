@@ -22,6 +22,11 @@ const HomeStyles = StyleSheet.create({
       height: 100,
       width: 100,
     },
+
+    versionText:{
+      color: 'white',
+      textAlign: 'right'
+    }
   });
   
   export default HomeStyles;
