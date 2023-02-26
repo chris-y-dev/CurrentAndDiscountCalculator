@@ -15,7 +15,7 @@ function AnimatedPig() {
       Animated.spring(spring, {
         bounciness: 50,
         speed: 100,
-        toValue: 0,
+        toValue: -10,
         useNativeDriver: true,
       }),
     ]).start(() => spring.setValue(0));
