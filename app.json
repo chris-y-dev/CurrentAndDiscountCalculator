@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "currencyAndDiscountCalculator",
+    "name": "Currency and Discount Calculator",
     "slug": "currencyAndDiscountCalculator",
     "version": "2.0.0",
     "orientation": "portrait",
@@ -14,9 +14,7 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },

@@ -64,7 +64,7 @@ function Home() {
         <View style={HomeStyles.imageContainer}>
           <AnimatedPig />
         </View>
-        <Text>V2.0.0</Text>
+        <Text>v2.0.0</Text>
       </View>
     </View>
   );
