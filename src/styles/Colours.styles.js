@@ -23,6 +23,11 @@ const Colours = StyleSheet.create({
     },
 
     
+    whiteFont:{
+        color: "#FFFFFF"
+    },
+
+    
 })
 
 export default Colours;

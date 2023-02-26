@@ -5,6 +5,9 @@ import GetCurrencyConversion from "../../api/GetCurrencyConversion";
 import DropDownIcon from "../../components/DropDownIcon";
 import CurrencyConverterStyles from "./CurrenConverter.styles";
 import SharedStyles from "../../styles/SharedStyles.styles";
+import Colours from "../../styles/Colours.styles";
+import { Pressable } from "react-native";
+import { Keyboard } from "react-native";
 
 function CurrencyConverter() {
   const [amountInput, setAmountInput] = useState<number>();
@@ -53,6 +56,8 @@ function CurrencyConverter() {
 
   //fetch request
   async function handleConvert() {
+    Keyboard.dismiss();
+
     if (!amountInput || Number.isNaN(amountInput)) {
       setConvertedResult("Enter a numeric amount");
       displayConversionResult();
@@ -67,7 +72,6 @@ function CurrencyConverter() {
           amountInput
         );
 
-        console.log(resultJson.result);
         setConvertedResult(resultJson.result);
         getCurrencySymbol();
         displayConversionResult();
@@ -84,25 +88,31 @@ function CurrencyConverter() {
   }
 
   return (
-    <View style={SharedStyles.screenContainer}>
-      <View style={SharedStyles.container}>
+    <View
+      style={[SharedStyles.screenContainer, Colours.screenBackgroundColour]}
+    >
+      <View style={[SharedStyles.container, Colours.screenBackgroundColour]}>
         <View style={CurrencyConverterStyles.selectRow}>
-          <Text style={SharedStyles.labelText}>From: </Text>
+          <Text style={[SharedStyles.labelText]}>From: </Text>
           <SelectDropdown
             data={currencies}
-            onSelect={(selectedItem, index) => {
+            onSelect={(selectedItem) => {
               setBaseCurrency(selectedItem);
             }}
-            buttonTextAfterSelection={(selectedItem, index) => {
+            buttonTextAfterSelection={(selectedItem) => {
               return selectedItem;
             }}
-            buttonStyle={CurrencyConverterStyles.dropDown}
+            buttonStyle={[
+              CurrencyConverterStyles.dropDown,
+              Colours.dropDownBackground,
+            ]}
+            buttonTextStyle={[CurrencyConverterStyles.dropDown_font]}
             renderDropdownIcon={() => <DropDownIcon />}
           />
         </View>
 
         <View style={CurrencyConverterStyles.selectRow}>
-          <Text style={SharedStyles.labelText}>Convert To: </Text>
+          <Text style={[SharedStyles.labelText]}>Convert To: </Text>
           <SelectDropdown
             data={currencies}
             onSelect={(selectedItem, index) => {
@@ -111,7 +121,11 @@ function CurrencyConverter() {
             buttonTextAfterSelection={(selectedItem, index) => {
               return selectedItem;
             }}
-            buttonStyle={CurrencyConverterStyles.dropDown}
+            buttonStyle={[
+              CurrencyConverterStyles.dropDown,
+              Colours.dropDownBackground,
+            ]}
+            buttonTextStyle={[CurrencyConverterStyles.dropDown_font]}
             renderDropdownIcon={() => <DropDownIcon />}
           />
         </View>
@@ -123,8 +137,13 @@ function CurrencyConverter() {
             onChangeText={handleAmountInput}
             style={SharedStyles.inputArea}
           />
-          <View style={SharedStyles.calculateButton}>
-            <Button title="Convert" onPress={handleConvert} color="#FF7ED4" />
+          <View style={[Colours.buttonColour, SharedStyles.customButtonArea]}>
+            <Pressable
+              style={({ pressed }) => pressed && [Colours.buttonColour_pressed]}
+              onPress={() => handleConvert()}
+            >
+              <Text style={[SharedStyles.customButtonText]}>CONVERT</Text>
+            </Pressable>
           </View>
         </View>
         <View style={SharedStyles.resultContainer}>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { View, Text, TextInput, Button, StyleSheet } from "react-native";
 import DiscountCalculatorStyles from "./DiscountCalculator.styles";
 import SharedStyles from "../../styles/SharedStyles.styles";
+import Colours from "../../styles/Colours.styles";
 
 function DiscountCalculator() {
   const [priceInput, setPriceInput] = useState(NaN);

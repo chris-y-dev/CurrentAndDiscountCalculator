@@ -5,11 +5,27 @@ import Home from "./src/pages/Home/Home"
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-
+import {
+  useFonts,
+  Quicksand_400Regular,
+  Quicksand_500Medium,
+  Quicksand_700Bold
+} from "@expo-google-fonts/quicksand";
 
 export default function App() {
   
   const Stack = createNativeStackNavigator();
+
+  
+  let [fontsLoaded] = useFonts({
+    Quicksand_400Regular,
+    Quicksand_500Medium,
+    Quicksand_700Bold
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
 
   return (
 

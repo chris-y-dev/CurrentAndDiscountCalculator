@@ -2,24 +2,10 @@ import { StyleSheet } from "react-native";
 
 
 const HomeStyles = StyleSheet.create({
-
-  
     
     buttons: {
       alignItems: "center",
       marginBottom: 80,
-    },
-  
-    customButtonArea: {
-      borderRadius: 6,
-      width: 240,
-      marginVertical: 24,
-    },
-  
-    customButtonText: {
-      textAlign: "center",
-      color: "white",
-      padding: 14,
     },
   
     pressedButton: {
