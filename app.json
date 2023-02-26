@@ -28,5 +28,6 @@
       "favicon": "./assets/favicon.png"
     },
     "backgroundColor": "#611344"
-  }
+  },
+  "owner": "chris-y-dev"
 }
