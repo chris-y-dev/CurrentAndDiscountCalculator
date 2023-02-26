@@ -12,8 +12,6 @@ const CurrencyConverterStyles = StyleSheet.create({
         borderWidth: 2,
         borderColor: 'white',
         borderRadius: 8,
-        backgroundColor: '#FFEEFE'
-
     },
 
     inputContainer: {

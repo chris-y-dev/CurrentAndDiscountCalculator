@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { View, Text, TextInput, Button, StyleSheet } from "react-native";
 import DiscountCalculatorStyles from "./DiscountCalculator.styles";
+import SharedStyles from "../../styles/SharedStyles.styles";
 
-function DiscountCalculator(props: { styles: any }) {
+function DiscountCalculator() {
   const [priceInput, setPriceInput] = useState(NaN);
   const [discountInput, setDiscountInput] = useState(NaN);
   const [displayResult, setDisplayResult] = useState(false);
@@ -34,33 +35,33 @@ function DiscountCalculator(props: { styles: any }) {
   }
 
   return (
-    <View style={props.styles.containerFull}>
-      <View style={props.styles.container}>
+    <View style={SharedStyles.screenContainer}>
+      <View style={SharedStyles.container}>
         <View style={DiscountCalculatorStyles.inputRow}>
-          <Text style={props.styles.labelText}>Original Price</Text>
+          <Text style={SharedStyles.labelText}>Original Price</Text>
           <TextInput
             placeholder="e.g. 99.95"
             keyboardType="number-pad"
             onChangeText={handlePriceInput}
-            style={props.styles.inputArea}
+            style={SharedStyles.inputArea}
           />
         </View>
         <View style={DiscountCalculatorStyles.inputRow}>
-          <Text style={props.styles.labelText}>Discount %</Text>
+          <Text style={SharedStyles.labelText}>Discount %</Text>
           <TextInput
             placeholder="e.g. 15"
             keyboardType="number-pad"
             onChangeText={handleDiscountInput}
-            style={props.styles.inputArea}
+            style={SharedStyles.inputArea}
           />
         </View>
-        <View style={props.styles.calculateButton}>
+        <View style={SharedStyles.calculateButton}>
           <Button title="Calculate" onPress={handleCalculate} color="#FF7ED4" />
         </View>
         {displayResult && (
-          <View style={props.styles.resultContainer}>
-            <Text style={props.styles.resultLabel}>Discounted Price</Text>
-            <Text style={props.styles.resultText}>{result}</Text>
+          <View style={SharedStyles.resultContainer}>
+            <Text style={SharedStyles.resultLabel}>Discounted Price</Text>
+            <Text style={SharedStyles.resultText}>{result}</Text>
           </View>
         )}
       </View>

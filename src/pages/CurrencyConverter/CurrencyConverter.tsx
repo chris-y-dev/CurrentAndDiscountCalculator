@@ -4,8 +4,9 @@ import SelectDropdown from "react-native-select-dropdown";
 import GetCurrencyConversion from "../../api/GetCurrencyConversion";
 import DropDownIcon from "../../components/DropDownIcon";
 import CurrencyConverterStyles from "./CurrenConverter.styles";
+import SharedStyles from "../../styles/SharedStyles.styles";
 
-function CurrencyConverter(props: { styles: any }) {
+function CurrencyConverter() {
   const [amountInput, setAmountInput] = useState<number>();
   const [baseCurrency, setBaseCurrency] = useState<string | undefined>(
     undefined
@@ -83,10 +84,10 @@ function CurrencyConverter(props: { styles: any }) {
   }
 
   return (
-    <View style={props.styles.containerFull}>
-      <View style={props.styles.container}>
+    <View style={SharedStyles.screenContainer}>
+      <View style={SharedStyles.container}>
         <View style={CurrencyConverterStyles.selectRow}>
-          <Text style={props.styles.labelText}>From: </Text>
+          <Text style={SharedStyles.labelText}>From: </Text>
           <SelectDropdown
             data={currencies}
             onSelect={(selectedItem, index) => {
@@ -101,7 +102,7 @@ function CurrencyConverter(props: { styles: any }) {
         </View>
 
         <View style={CurrencyConverterStyles.selectRow}>
-          <Text style={props.styles.labelText}>Convert To: </Text>
+          <Text style={SharedStyles.labelText}>Convert To: </Text>
           <SelectDropdown
             data={currencies}
             onSelect={(selectedItem, index) => {
@@ -115,22 +116,22 @@ function CurrencyConverter(props: { styles: any }) {
           />
         </View>
         <View style={CurrencyConverterStyles.inputContainer}>
-          <Text style={props.styles.labelText}>Amount to convert: </Text>
+          <Text style={SharedStyles.labelText}>Amount to convert: </Text>
           <TextInput
             placeholder="e.g. 99.95"
             keyboardType="number-pad"
             onChangeText={handleAmountInput}
-            style={props.styles.inputArea}
+            style={SharedStyles.inputArea}
           />
-          <View style={props.styles.calculateButton}>
+          <View style={SharedStyles.calculateButton}>
             <Button title="Convert" onPress={handleConvert} color="#FF7ED4" />
           </View>
         </View>
-        <View style={props.styles.resultContainer}>
+        <View style={SharedStyles.resultContainer}>
           {displayResult && (
             <View>
-              <Text style={props.styles.resultLabel}>Result: </Text>
-              <Text style={props.styles.resultText}>
+              <Text style={SharedStyles.resultLabel}>Result: </Text>
+              <Text style={SharedStyles.resultText}>
                 {convertedSymbol} {convertedResult}
               </Text>
             </View>
