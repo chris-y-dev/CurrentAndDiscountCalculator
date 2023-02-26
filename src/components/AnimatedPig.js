@@ -31,7 +31,7 @@ function AnimatedPig({homeStyles}) {
         <Animated.View
         style={{transform: [{translateY: spring}]}}>
             <Pressable onPress={animatePig}>
-                <Image source={require('../assets/piggyBank_icon.png')} style={homeStyles.image}/>
+                <Image source={require('../../assets/piggyBank_icon.png')} style={homeStyles.image}/>
             </Pressable>
         </Animated.View>
   )

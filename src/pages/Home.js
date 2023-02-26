@@ -1,7 +1,7 @@
 import React from 'react'
 import {View, Text, Button, StyleSheet, Pressable, Image} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import AnimatedPig from './AnimatedPig';
+import AnimatedPig from '../components/AnimatedPig';
 
 function Home({ styles }) {
 

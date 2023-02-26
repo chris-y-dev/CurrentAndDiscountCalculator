@@ -1,10 +1,7 @@
-
-import {useState} from 'react'
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TextInput } from 'react-native';
-import DiscountCalculator from './components/DiscountCalculator';
-import CurrencyConverter from './components/CurrencyConverter';
-import Home from './components/Home';
+import { StyleSheet } from 'react-native';
+import CurrencyConverter from './src/pages/CurrencyConverter/CurrencyConverter';
+import DiscountCalculator from './src/pages/DiscountCalculator/DiscountCalculator';
+import Home from "./src/pages/Home"
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -23,10 +20,7 @@ export default function App() {
                 children = { () => <Home styles={styles} />}
                 options={{ title: 'Home'}}
               />
-            {/* <Stack.Screen 
-              name="DiscountCalculator" 
-              component={DiscountCalculator} 
-            /> */}
+     
             <Stack.Screen 
               name="DiscountCalculator" 
               children = { () => <DiscountCalculator styles={styles}/>}
@@ -36,8 +30,6 @@ export default function App() {
               children = {() => <CurrencyConverter styles={styles}/>} 
             />
         
-              {/* <DiscountCalculator /> */}
-            {/* <CurrencyConverter /> */}
         </Stack.Navigator>
       </NavigationContainer>
   );

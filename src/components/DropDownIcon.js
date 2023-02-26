@@ -4,7 +4,7 @@ import {Image, StyleSheet} from 'react-native'
 function DropDownIcon() {
   return (
     <Image 
-        source={require('../assets/dropDown_icon.png')}
+        source={require('../../assets/dropDown_icon.png')}
         style={styles.icon}
         />
   )

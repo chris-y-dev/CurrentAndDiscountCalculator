@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "mumsApp",
-    "slug": "mumsApp",
+    "name": "Currency and Discount Calculator",
+    "slug": "Currency and Discount Calculator",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
