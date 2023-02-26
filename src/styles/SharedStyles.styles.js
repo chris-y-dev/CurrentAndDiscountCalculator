@@ -63,7 +63,7 @@ const SharedStyles = StyleSheet.create({
       resultText: {
         marginTop: 0,
         fontSize: 30,
-        color: "#FF3795",
+        color: "#FF69B7",
         textAlign: 'right',
         fontFamily: "Quicksand_700Bold"
       },

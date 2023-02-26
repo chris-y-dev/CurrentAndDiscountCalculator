@@ -1,7 +1,8 @@
 import React, { useRef, useEffect } from "react";
 import { View, Image, Animated, Pressable } from "react-native";
+import HomeStyles from "../pages/Home/Home.styles";
 
-function AnimatedPig(props: { homeStyles: any }) {
+function AnimatedPig() {
   //useref = create once
   const spring = useRef(new Animated.Value(0)).current;
 
@@ -14,7 +15,7 @@ function AnimatedPig(props: { homeStyles: any }) {
       Animated.spring(spring, {
         bounciness: 50,
         speed: 100,
-        toValue: -30,
+        toValue: 0,
         useNativeDriver: true,
       }),
     ]).start(() => spring.setValue(0));
@@ -25,7 +26,7 @@ function AnimatedPig(props: { homeStyles: any }) {
       <Pressable onPress={animatePig}>
         <Image
           source={require("../../assets/piggyBank_icon.png")}
-          style={props.homeStyles.image}
+          style={HomeStyles.image}
         />
       </Pressable>
     </Animated.View>

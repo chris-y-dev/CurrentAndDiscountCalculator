@@ -8,6 +8,7 @@ import SharedStyles from "../../styles/SharedStyles.styles";
 import Colours from "../../styles/Colours.styles";
 import { Pressable } from "react-native";
 import { Keyboard } from "react-native";
+import GetAvailableCurrencyCodes from "../../api/GetAvailableCurrencyCodes";
 
 function CurrencyConverter() {
   const [amountInput, setAmountInput] = useState<number>();
@@ -57,6 +58,10 @@ function CurrencyConverter() {
   //fetch request
   async function handleConvert() {
     Keyboard.dismiss();
+
+    // var result = await GetAvailableCurrencyCodes();
+    // console.log(result.symbols);
+    // console.log(Object.keys(result.symbols));
 
     if (!amountInput || Number.isNaN(amountInput)) {
       setConvertedResult("Enter a numeric amount");

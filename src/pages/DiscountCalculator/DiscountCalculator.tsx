@@ -3,6 +3,8 @@ import { View, Text, TextInput, Button, StyleSheet } from "react-native";
 import DiscountCalculatorStyles from "./DiscountCalculator.styles";
 import SharedStyles from "../../styles/SharedStyles.styles";
 import Colours from "../../styles/Colours.styles";
+import { Keyboard } from "react-native";
+import { Pressable } from "react-native";
 
 function DiscountCalculator() {
   const [priceInput, setPriceInput] = useState(NaN);
@@ -11,10 +13,7 @@ function DiscountCalculator() {
   const [result, setResult] = useState("--");
 
   function handlePriceInput(priceInput: string) {
-    console.log(priceInput);
-
     const parsedInput = Number.parseFloat(priceInput);
-
     setPriceInput(parsedInput);
   }
 
@@ -24,10 +23,12 @@ function DiscountCalculator() {
   }
 
   function handleCalculate() {
+    Keyboard.dismiss();
+
     if (priceInput && discountInput) {
       const result =
         "$ " + (priceInput * ((100 - discountInput) / 100)).toFixed(3);
-      console.log(result);
+
       setResult(result);
     } else {
       setResult("Please enter valid numbers");
@@ -36,8 +37,10 @@ function DiscountCalculator() {
   }
 
   return (
-    <View style={SharedStyles.screenContainer}>
-      <View style={SharedStyles.container}>
+    <View
+      style={[SharedStyles.screenContainer, Colours.screenBackgroundColour]}
+    >
+      <View style={[SharedStyles.container, Colours.screenBackgroundColour]}>
         <View style={DiscountCalculatorStyles.inputRow}>
           <Text style={SharedStyles.labelText}>Original Price</Text>
           <TextInput
@@ -56,12 +59,17 @@ function DiscountCalculator() {
             style={SharedStyles.inputArea}
           />
         </View>
-        <View style={SharedStyles.calculateButton}>
-          <Button title="Calculate" onPress={handleCalculate} color="#FF7ED4" />
+        <View style={[Colours.buttonColour, SharedStyles.customButtonArea]}>
+          <Pressable
+            style={({ pressed }) => pressed && [Colours.buttonColour_pressed]}
+            onPress={() => handleCalculate()}
+          >
+            <Text style={[SharedStyles.customButtonText]}>CONVERT</Text>
+          </Pressable>
         </View>
         {displayResult && (
           <View style={SharedStyles.resultContainer}>
-            <Text style={SharedStyles.resultLabel}>Discounted Price</Text>
+            <Text style={SharedStyles.resultLabel}>Discounted Price: </Text>
             <Text style={SharedStyles.resultText}>{result}</Text>
           </View>
         )}

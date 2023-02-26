@@ -62,7 +62,7 @@ function Home() {
           </View>
         </View>
         <View style={HomeStyles.imageContainer}>
-          <AnimatedPig homeStyles={HomeStyles} />
+          <AnimatedPig />
         </View>
       </View>
     </View>

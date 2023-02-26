@@ -11,7 +11,8 @@ const Colours = StyleSheet.create({
     },
 
     buttonColour_pressed:{
-        backgroundColor: "#AC6598",
+        backgroundColor: "#A3608F",
+        borderRadius: 8
     },
 
     titleColour:{
