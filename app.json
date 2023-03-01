@@ -14,7 +14,9 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
@@ -31,7 +33,7 @@
     "backgroundColor": "#611344",
     "extra": {
       "eas": {
-        "projectId": ""
+        "projectId": "fb1ec126-2e65-4330-b127-8e75e387802b"
       }
     },
     "owner": "chris-y-dev"
