@@ -14,7 +14,9 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
@@ -22,13 +24,18 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.chrisydev.currencyAndPriceCalculator"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "backgroundColor": "#611344",
-    "extra": {},
+    "extra": {
+      "eas": {
+        "projectId": "d1e8fa70-28d6-41c1-a90c-d05041ae0caa"
+      }
+    },
     "owner": "chris-y-dev"
   },
   "owner": "chris-y-dev"
