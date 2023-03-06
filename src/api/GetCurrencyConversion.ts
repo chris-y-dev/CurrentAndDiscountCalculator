@@ -1,14 +1,21 @@
-import { API_KEY } from "@env";
+// import { API_KEY } from "@env";
+import ProvideKey from "./hooks/ProvideKey";
+import CryptoJS from "crypto-js";
+import KeyService from "../service/KeyService";
 
 export default async function GetCurrencyConversion(
   targetCurrency: string,
   baseCurrency: string,
   amountInput: number
 ): Promise<any> {
-  const apiKey = API_KEY;
+  var keys = await KeyService();
+
+  var decrypted = CryptoJS.TripleDES.decrypt(keys?.key, keys?.phrase);
+
+  // const apiKey = API_KEY;
 
   var myHeaders = new Headers();
-  myHeaders.append("apikey", apiKey);
+  myHeaders.append("apikey", decrypted.toString(CryptoJS.enc.Utf8));
 
   var requestOptions = {
     method: "GET",

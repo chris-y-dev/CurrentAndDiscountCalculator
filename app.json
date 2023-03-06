@@ -2,9 +2,9 @@
   "expo": {
     "name": "Currency and Price Calculator",
     "slug": "currencyAndPriceCalculator",
-    "version": "2.0.0",
+    "version": "2.1.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/screenshots/app_icon_transparent.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
@@ -14,15 +14,13 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/screenshots/app_icon_transparent.png",
         "backgroundColor": "#FFFFFF"
       },
       "package": "com.chrisydev.currencyAndPriceCalculator"
