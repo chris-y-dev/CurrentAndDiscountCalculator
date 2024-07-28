@@ -22,7 +22,7 @@
     "babel-plugin-inline-dotenv": "^1.7.0",
     "babel-plugin-transform-inline-environment-variables": "^0.4.4",
     "crypto-js": "3.1.9-1",
-    "eas-cli": "^3.7.2",
+    "eas-cli": "^3.18.3",
     "expo": "~48.0.4",
     "expo-font": "^11.1.1",
     "expo-status-bar": "~1.4.4",
