@@ -2,7 +2,7 @@
   "expo": {
     "name": "Currency and Price Calculator",
     "slug": "currencyAndPriceCalculator",
-    "version": "2.1.0",
+    "version": "3.1.0",
     "orientation": "portrait",
     "icon": "./assets/screenshots/app_icon_transparent.png",
     "userInterfaceStyle": "light",
@@ -19,7 +19,7 @@
       "supportsTablet": true
     },
     "android": {
-      "versionCode": 2,
+      "versionCode": 3,
       "adaptiveIcon": {
         "foregroundImage": "./assets/screenshots/app_icon_transparent.png",
         "backgroundColor": "#FFFFFF"
